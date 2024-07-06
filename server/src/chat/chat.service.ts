@@ -1,8 +1,7 @@
 import { Injectable } from '@nestjs/common';
-import { Socket } from 'socket.io';
-
+ 
 export interface Message {
-  id: number;
+  username: string;
   content: string;
 }
 
@@ -10,9 +9,9 @@ export interface Message {
 export class ChatService {
   private messages: Message[] = [];
 
-  guardarMensaje(mensaje: string): Message {
+  guardarMensaje(mensaje: string,username:string): Message {
     const newMessage: Message = {
-      id: this.messages.length + 1,
+      username: username,
       content: mensaje,
     };
     this.messages.push(newMessage);

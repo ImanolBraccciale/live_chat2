@@ -45,7 +45,7 @@ const Chat = () => {
     // Enviar el mensaje al servidor
     const username = localStorage.getItem('username') || 'anonimo';
     if (newMessage.trim() !== '') {
-      socket.emit('enviarMensaje', { mensaje: newMessage, username });
+      socket.emit('enviarMensaje', { mensaje: newMessage, username:username });
       setNewMessage(''); // Limpiar el campo de nuevo mensaje después de enviar
     }
   };

@@ -35,18 +35,18 @@ export class ChatGateWay implements OnGatewayConnection, OnGatewayDisconnect {
       return;
     }
     
-    const authToken = client.handshake.auth.authorization;
-    if (!authToken || !authToken.startsWith('Bearer ')) {
-      console.log('Error: Token no encontrado en el header Authorization');
-      return;
-    }
-    if (!data.mensaje) return;
+    // const authToken = client.handshake.auth.authorization;
+    // if (!authToken || !authToken.startsWith('Bearer ')) {
+    //   console.log('Error: Token no encontrado en el header Authorization');
+    //   return;
+    // }
+    // const token = authToken.split(' ')[1];
     
-    const token = authToken.split(' ')[1];
+    if (!data.mensaje) return;
     const username = data.username || 'anonimo';  // Nombre de usuario enviado por el cliente
     
-    this.chatService.guardarMensaje(data.mensaje);
-    this.server.emit('nuevoMensaje', { content: data.mensaje, remitente: username });
+    this.chatService.guardarMensaje(  data.mensaje, username);
+    this.server.emit('nuevoMensaje', { content: data.mensaje, username: username });
   }
 
   @SubscribeMessage('obtenerTodosMensajes')
