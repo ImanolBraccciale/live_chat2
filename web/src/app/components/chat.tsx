@@ -10,7 +10,7 @@ interface Message {
 }
 const authToken = 'Bearer your-auth-token'; // Reemplaza con tu token de autenticación
 
-const socket = io('http://localhost:4000', {
+const socket = io('https://chat-server-drab.vercel.app', {
   // Configurar los headers para la conexión
   auth: {
     authorization: authToken,
