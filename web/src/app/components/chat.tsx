@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { io, Socket } from 'socket.io-client';
-import styles from './Chat.module.css';
+import styles from './chat.module.css';
 
 interface Message {
   username: string;

@@ -1,6 +1,6 @@
 "use client"
 import { useState } from 'react';
-import styles from './Login.module.css';
+import styles from './login.module.css';
 
 const Login = ({ onLogin }: { onLogin: (username: string) => void }) => {
   const [username, setUsername] = useState('');
