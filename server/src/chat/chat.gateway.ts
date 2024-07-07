@@ -5,9 +5,13 @@ import { Server, Socket } from 'socket.io';
 
 @Injectable()
 @WebSocketGateway({
-  cors: true,
+  cors: {
+    origin:  'https://live-chat2-web.vercel.app',
+    methods: ['GET', 'POST'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true
+  },
   path: '/socket.io',
- 
 })
 export class ChatGateWay implements OnGatewayConnection, OnGatewayDisconnect {
 

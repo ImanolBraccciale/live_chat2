@@ -3,16 +3,14 @@ import { AppModule } from './app.module';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
-    res.header('Access-Control-Allow-Headers', 'Content-Type, Accept');
-    next();
-  });
   app.enableCors({
-    allowedHeaders: '*',
-    origin: '*',
+    origin: 'https://live-chat2-web.vercel.app', // Cambiar a la URL de tu frontend en producción
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
+    allowedHeaders: 'Content-Type, Accept',
+    credentials: true
   });
+
+
   await app.listen(4000);
 }
 bootstrap();
