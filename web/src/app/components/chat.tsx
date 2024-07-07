@@ -10,11 +10,11 @@ interface Message {
 }
 const authToken = 'Bearer your-auth-token'; // Reemplaza con tu token de autenticación
 
-const socket = io('https://chat-server-drab.vercel.app', {
-  // Configurar los headers para la conexión
+const socket = io('https://live-chat2.onrender.com', {
   auth: {
     authorization: authToken,
   },
+  withCredentials: true,
 });
 
 const Chat = () => {

@@ -7,6 +7,8 @@ import { Server, Socket } from 'socket.io';
 @WebSocketGateway({
   cors: true,
   path: '/socket.io',
+  origin: "https://live-chat-web-blond.vercel.app",
+
 })
 export class ChatGateWay implements OnGatewayConnection, OnGatewayDisconnect {
 
