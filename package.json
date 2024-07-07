@@ -8,7 +8,9 @@
     "scripts": {
       "start": "concurrently \"npm run server\" \"npm run web\"",
       "server": "cd server && npm start",
-      "web": "cd web && npm run build"
+      "web": "cd web && npm run build",
+      "install": "cd server && npm install && cd ../web && npm install",
+    "postinstall": "cd web && npm run build"
     }
   }
   
