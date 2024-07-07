@@ -10,7 +10,7 @@ interface Message {
 }
 const authToken = 'Bearer your-auth-token'; // Reemplaza con tu token de autenticación
 
-const socket = io('https://live-chat2-six.vercel.app/', {
+const socket = io('https://serverchat-eight.vercel.app/', {
   // Configurar los headers para la conexión
   auth: {
     authorization: authToken,
