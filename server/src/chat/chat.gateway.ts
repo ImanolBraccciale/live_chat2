@@ -1,14 +1,14 @@
 import { ConnectedSocket, MessageBody, OnGatewayConnection, OnGatewayDisconnect, SubscribeMessage, WebSocketGateway, WebSocketServer } from '@nestjs/websockets';
 import { Injectable, OnModuleInit } from '@nestjs/common';
 import { ChatService } from './chat.service';
-import { Server, Socket } from 'socket.io';
+import { Server, Socket,} from 'socket.io';
 
 @Injectable()
 @WebSocketGateway({
   cors: {
-    origin:  'https://live-chat2-web.vercel.app',
+    origin:  '*',
     methods: ['GET', 'POST'],
-    allowedHeaders: ['Content-Type', 'Authorization'],
+    allowedHeaders: 'Content-Type, Accept, Authorization',
     credentials: true
   },
   path: '/socket.io',
