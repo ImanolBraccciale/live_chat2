@@ -1,0 +1,14 @@
+{
+    "name": "live_chat",
+    "version": "1.0.0",
+    "main": "index.js",
+    "dependencies": {
+      "concurrently": "^8.2.2"
+    },
+    "scripts": {
+      "start": "concurrently \"npm run server\" \"npm run web\"",
+      "server": "cd server && npm start",
+      "web": "cd web && npm start"
+    }
+  }
+  

@@ -10,11 +10,11 @@ interface Message {
 }
 const authToken = 'Bearer your-auth-token'; // Reemplaza con tu token de autenticación
 
-const socket = io('https://live-chat2.onrender.com', {
+const socket = io('http://localhost:4000', {
+  // Configurar los headers para la conexión
   auth: {
     authorization: authToken,
   },
-  withCredentials: true,
 });
 
 const Chat = () => {

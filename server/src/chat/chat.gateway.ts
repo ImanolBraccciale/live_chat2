@@ -7,8 +7,7 @@ import { Server, Socket } from 'socket.io';
 @WebSocketGateway({
   cors: true,
   path: '/socket.io',
-  origin: "https://live-chat2.onrender.com",
-
+ 
 })
 export class ChatGateWay implements OnGatewayConnection, OnGatewayDisconnect {
 
