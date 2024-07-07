@@ -6,7 +6,7 @@ async function bootstrap() {
   app.enableCors({
     origin: "https://live-chat-1ovi8qqtx-imanols-projects.vercel.app",
     credentials: true,
-  });https://live-chat-1ovi8qqtx-imanols-projects.vercel.app
+  });
   await app.listen(4000);
 }
 bootstrap();
